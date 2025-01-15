@@ -1,0 +1,37 @@
+# Entorno virtual
+venv/
+env/
+
+# Archivos de configuración de entorno
+*.env
+.env.*
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Carpetas de bases de datos locales
+instance/
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# Archivos creados por herramientas
+*.swp
+*.swo
+*.bak
+
+# Archivos específicos de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Archivos generados por Flask
+*.pid
+
+# Archivos específicos de IDEs y editores
+.idea/
+.vscode/
