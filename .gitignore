@@ -35,3 +35,5 @@ Thumbs.db
 # Archivos específicos de IDEs y editores
 .idea/
 .vscode/
+
+./app-blog-front/node_modules/
