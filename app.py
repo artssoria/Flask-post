@@ -1,7 +1,7 @@
-from flask import Flask, request, render_template_string , jsonify
-from models.article import db, Article
+from flask import Flask, request , jsonify
+from models.article import Article
 from models.user import User
-
+from models import db
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def register_user():
     new_user.set_password(data['password'])
     db.session.add(new_user)
     db.session.commit()
-    return jsonify({'success': 'El usuario {new_user.username} fue registrado con éxito'}), 201
+    return jsonify({'success': f'El usuario {new_user.username} fue registrado con éxito'}), 201
 
 @app.route('/login', methods=['POST'])
 def login_user():

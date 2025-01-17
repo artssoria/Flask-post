@@ -1,7 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy
+from models import db
 
-
-db = SQLAlchemy()
 # Modelo de bbdd
 class Article(db.Model):
     __tablename__ = 'article' 
