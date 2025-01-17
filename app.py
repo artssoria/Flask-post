@@ -31,6 +31,16 @@ def register_user():
     db.session.commit()
     return jsonify({'success': 'El usuario {new_user.username} fue registrado con éxito'}), 201
 
+@app.route('/login', methods=['POST'])
+def login_user():
+    data = request.get_json()
+    user = User.query.filter_by(email=data['email']).first()
+    if user is None or not user.check_password(data['password']):
+        return jsonify({'error': 'Credenciales inválidas'})
+    
+    return jsonify({'success': f'Bienvenido {user.username}'}), 200
+
+
 #Listado de todos los arcticulos
 @app.route('/articles', methods=['GET'])
 def get_articles():
